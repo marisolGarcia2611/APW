@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/styleNav.css"/>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <title>Cafetería</title>
+</head>
+<body class="background">
+    <main>
+        <nav id="navbar" class="menu"></nav>
+        <div  class="container__s c__info" style="margin-top: 10px;"></div>  
+        <div class="wrapper">
+             <!-- <input type="button" value="Página anterior" "> -->
+            <p class="btn1" onClick="history.go(-1);" href="#"><img width="20px" height="20px" src="./images/arrow.png"/></p>
+        </div>
+        
+        <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+              
+    </main>
+
+    <footer id="footer" class="footer-distributed" ></footer>
+
+    <script src="js/cinfo.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+      var inicio = 0; //se inicializa una variable en 0
+
+      function aumentar(){ // se crean la funcion y se agrega al evento onclick en en la etiqueta button con id aumentar
+      
+      var cantidad = document.getElementById('cantidad').value = ++inicio; //se obtiene el valor del input, y se incrementa en 1 el valor que tenga.
+      }
+      
+      function disminuir(){ // se crean la funcion y se agrega al evento onclick en en la etiqueta button con id disminuir
+      
+      var cantidad = document.getElementById('cantidad').value = --inicio; //se obtiene el valor del input, y se decrementa en 1 el valor que tenga.
+      }
+      </script>
+</body>
+</html>
